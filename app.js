@@ -109,6 +109,7 @@ function updateUI() {
             const lock = document.createElement('div');
             lock.className = 'lock-icon';
             lock.innerHTML = '🔒';
+            lock.title="Время для этой загадки еще не наступило!";
             btnWrapper.appendChild(lock);
         }
 
