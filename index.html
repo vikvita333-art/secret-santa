@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таинственное название сайта</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем рукописный шрифт для кнопок -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <button class="logo-btn" id="profileBtn">?</button>
+        <div class="title">"Таинственное название сайта"</div>
+        <div class="key-counter">
+            <span class="key-icon">🗝️</span> × <span id="keyCount">0</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Левая панель: Загадки -->
+        <div class="left-panel" id="riddlesContainer">
+            <!-- Кнопки генерируются в app.js -->
+        </div>
+
+        <!-- Правая панель: Дверь и цепи -->
+        <div class="right-panel">
+            <div class="door-container">
+                <div class="door-base" id="doorBtn"></div>
+                <div class="door-step"></div>
+                <div class="chains-container" id="chainsContainer">
+                    <!-- Цепи генерируются в app.js -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Скрытая кнопка для тестировщиков -->
+        <div class="hidden-dev-trigger" id="devTrigger" title="Кнопка для тестов"></div>
+    </main>
+
+    <!-- Модальное окно: Загадка -->
+    <div class="modal-overlay" id="riddleModal">
+        <div class="modal-content">
+            <h2>Введите ответ</h2>
+            <p id="riddleText">Секретная загадка</p>
+            <input type="text" id="riddleInput" placeholder="Ваш ответ..." autocomplete="off">
+            <div class="error-msg" id="riddleError"></div>
+            <button id="submitRiddleBtn">Проверить</button>
+            <button id="closeRiddleBtn" class="btn-secondary">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно: Профиль -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="modal-content">
+            <h2>Профиль игрока</h2>
+            <p>Имя: <strong id="profileNameDisplay">Не задано</strong></p>
+            <input type="text" id="nameInput" placeholder="Введите имя...">
+            <div class="profile-actions">
+                <button id="saveNameBtn">Сохранить имя</button>
+                <button id="exportBtn" class="btn-blue">Экспорт</button>
+                <button id="importBtn" class="btn-orange">Импорт</button>
+            </div>
+            <input type="file" id="importFile" style="display: none;" accept=".txt">
+            <button id="closeProfileBtn" class="btn-secondary full-width">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно: Тестировщик (Дебаг) -->
+    <div class="modal-overlay" id="devPanel">
+        <div class="modal-content dev-modal">
+            <h2>🛠 Режим тестировщика</h2>
+            
+            <div class="dev-input-group">
+                <label>
+                    <input type="checkbox" id="devTimeToggle"> Снять ограничение по времени
+                </label>
+            </div>
+
+            <div class="dev-input-group">
+                <label>Ключи:</label>
+                <div class="dev-inline">
+                    <input type="number" id="devKeysInput" min="0">
+                    <button id="devSetKeys" class="btn-small">Установить</button>
+                </div>
+            </div>
+
+            <div class="dev-input-group">
+                <label>Действия:</label>
+                <button id="devResetChains" class="btn-small btn-red">Восстановить все цепи</button>
+            </div>
+
+            <div class="dev-input-group">
+                <button id="devResetAll" class="btn-small btn-red full-width">Полный сброс (Clear)</button>
+            </div>
+
+            <button id="closeDevPanel" class="btn-secondary full-width">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
