@@ -22,8 +22,8 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    align-items: center;     /* Центрирование по вертикали */
+    padding: 10px 5vw;
     background-color: var(--panel-bg);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 10;
@@ -53,7 +53,8 @@ header {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    gap: 10px;
+    border:20%; 
+    z-index: 6;
 }
 .key-icon { font-size: 30px; }
 
@@ -309,3 +310,15 @@ button:hover { opacity: 0.8; }
     z-index: 50;
 }
 .hidden-dev-trigger:hover { opacity: 0.2; }
+#lamp{
+/* position: fixed;       Фиксирует картинку относительно окна браузера  */
+  height:105vh;              /* Отступ слева */
+  object-fit: cover;     /* Сохраняет пропорции изображения */
+  z-index: 5;  
+}
+.lamp{
+position: fixed;       
+  top: -5vh;                /* Отступ сверху */
+  right: -2%;      /* Сохраняет пропорции изображения */
+  z-index: 5;  
+}
