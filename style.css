@@ -20,12 +20,12 @@ body {
 
 /* Шапка */
 header {
+    width: 60vw;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--panel-bg);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    justify-content: space-evenly;
+    align-items: center;     /* Центрирование по вертикали */
+    padding: 10px 5vw;
+    
     z-index: 10;
 }
 
@@ -46,15 +46,9 @@ header {
 }
 .logo-btn:hover { background: #333; }
 
-.title { font-size: 24px; font-weight: bold; }
+.title { font-size: 24px; font-weight: bold;position: relative; }
 
-.key-counter {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    gap: 10px;
-}
+
 .key-icon { font-size: 30px; }
 
 /* Основной контент */
@@ -156,7 +150,7 @@ main {
     background-color: #888;
     position: absolute;
     bottom: -7vh;
-    right: -25px;
+    right: -19vw;
     z-index: -1;
 }
 
@@ -309,3 +303,31 @@ button:hover { opacity: 0.8; }
     z-index: 50;
 }
 .hidden-dev-trigger:hover { opacity: 0.2; }
+#lamp{
+ position: fixed;       /*Фиксирует картинку относительно окна браузера   */
+   height: 100%;        /* Картинка растягивается по высоте обертки */             /* Отступ слева */
+  object-fit: cover;     /* Сохраняет пропорции изображения */
+  z-index: 5;  
+}
+.lamp{
+    position: fixed;
+    display: flex;
+    z-index: 5;
+    width: auto;
+    height: 105vh;
+    top: -4vh;
+    right: 10vw;
+    justify-content: center;  /* Сохраняет пропорции изображения */
+  
+}
+.key-counter {
+    display: flex;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    top: 8vh;
+    left: -25px;
+    z-index: 6;
+    align-items: baseline;
+    flex-direction: row-reverse;
+}
