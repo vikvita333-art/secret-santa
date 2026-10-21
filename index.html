@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Таинственное название сайта</title>
+    <link rel="manifest" crossorigin="use-credentials" href="/manifest.json">
     <link rel="stylesheet" href="style.css">
     <!-- Подключаем рукописный шрифт для кнопок -->
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+ <script>
+ if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker зарегистрирован с областью:', registration.scope);
+      }).catch(error => {
+        console.error('Ошибка регистрации Service Worker:', error);
+      });
+  });
+}
+</script>
     <header>
         <button class="logo-btn" id="profileBtn">?</button>
         <div class="title">"Таинственное название сайта"</div>

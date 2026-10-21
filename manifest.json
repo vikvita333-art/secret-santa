@@ -1,0 +1,27 @@
+{
+  "name": "проделки гринча",              
+  "short_name": "НГ",                 
+  "description": "Потом придумаем", 
+  "start_url": "/",                      
+  "display": "standalone",                
+  "background_color": "#ffffff",          
+  "theme_color": "#ffffff",            
+  "orientation": "any",                  
+  "scope": "/",                         
+  "lang": "ru-RU",                        
+  "dir": "ltr",                          
+  "icons": [
+    {
+      "src": "/icon-192x192.webp",         
+      "sizes": "192x192",                
+      "type": "image/png",
+      "purpose": "any"                 
+    },
+    {
+      "src": "/icon-512x512.webp",        
+      "sizes": "512x512",                 
+      "type": "image/png",
+      "purpose": "any maskable"          
+    }
+  ]
+}
